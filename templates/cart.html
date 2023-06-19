@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    AutoCenter Card Page
+{% endblock title %}
+
+{% block content %}
+    <section class="img-background">
+        <h3>Giỏ Hàng</h3>
+        <div class="local-title">
+            <a href="index.html" class="style-back-home">Trang chủ</a> / <a class="live">Giỏ hàng</a>
+        </div>
+    </section>
+    <section id="cart">
+        <div class="container" style="padding-bottom: 0">
+            <div class="title-page">
+                <h4>Giỏ hàng của bạn</h4>
+            </div>
+        </div>
+        <div id="table">
+            <div class="container">
+                <div class="row">
+                    <div class="table">
+                        <div class="title-table">
+                            <p>Thông tin sản phẩm</p>
+                            <div class="detail-title-table">
+                                <p>Đơn giá</p>
+                                <p>Số lượng</p>
+                                <p>Thành tiền</p>
+                            </div>
+                        </div>
+                        <div class="group-info-item">
+                            <!-- <div class="info-item">
+                                <div class="left">
+                                    <div class="img-item">
+                                        <img class="img-fluid"
+                                            src="assets/gia-dau-nhot-xe-may-1-b8b37985-81df-4f47-9e32-2907be30ca76.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="name-item">
+                                        <p>Dầu Nhớt Fuchs Silkolene 10w40 và 10w30 chính hãng nhập khẩu từ Châu Âu</p>
+                                        <p class="mil">1 lít</p>
+                                        <span>Xóa</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="price">
+                                        <span class="output-price" min="1">200000<u>đ</u></span>
+                                    </div>
+                                    <div class="number">
+                                        <span>-</span>
+                                        <span class="output-number">0</span>
+                                        <span>+</span>
+                                    </div>
+                                    <div class="output-cost">
+                                        <span>200000<u>đ</u></span>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="info-item">
+                                <div class="left">
+                                    <div class="img-item">
+                                        <img class="img-fluid"
+                                            src="/assets/img/gia-dau-nhot-xe-may-1-b8b37985-81df-4f47-9e32-2907be30ca76.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="name-item">
+                                        <p id="name-of-item"> </p>
+                                        <p id="mil" class="mil"> </p>
+                                        <span>Xóa</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="price">
+                                        <span class="output-price">200000<u>đ</u></span>
+                                    </div>
+                                    <div class="number">
+                                        <span onclick="clickCounterDowm()"> - </span>
+                                        <span id="output-number" class="output-number">1</span>
+                                        <span onclick="clickCounterUp()"> + </span>
+                                    </div>
+                                    <div class="output-cost">
+                                        <span id="output-cost">0<u>đ</u></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col">
+                                <div class="total-to-pay">
+                                    <div class="total">
+                                        <p>Tổng tiền:</p>
+                                        <span class="total-cost">0<u>đ</u> </span>
+                                    </div>
+                                    <div class="button-to-pay">
+                                        <button>Thanh toán</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="result"> </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        if (typeof (Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("name-item-1", "Dầu Nhớt Fuchs Silkolene 10w40 và 10w30 chính hãng nhập khẩu từ Châu Âu");
+            // Retrieve
+            document.getElementById("name-of-item").innerHTML = localStorage.getItem("name-item-1");
+            //#
+            localStorage.setItem("capacity", "1 lít");
+            document.getElementById("mil").innerHTML = localStorage.getItem("capacity");
+        } else {
+            document.getElementById("name-of-item").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    </script>
+    <script>
+        function clickCounterUp() {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("output-number").innerHTML = localStorage.clickcount;
+            } else {
+                document.getElementById("output-number").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+        function clickCounterDowm() {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) - 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("output-number").innerHTML = localStorage.clickcount;
+            } else {
+                document.getElementById("output-number").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
+    <script>
+        function removeItem() {
+            localStorage.removeItem("lastname");
+        }
+    </script>
+{% endblock content %}

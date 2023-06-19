@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    {% endblock css %}
+</head>
+<body>
+    <header id="header">
+        <div class="background-header">
+            <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+                <p>19006750</p>
+            </div>
+            <div class="time-open">
+                <i class="fa-regular fa-clock"></i>
+                <p>Mở cửa: 7h30 - 17h30 ( Thứ 2 - Chủ nhật)</p>
+            </div>
+            <div class="add">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Tòa nhà Ladeco, 266 Đội Cấn, Ba Đình, Hà Nội, Vietnam.</p>
+            </div>
+        </div>
+        <section id="navbar-mobile" class="navbar-mobile">
+            <div class="topnav" id="myTopnav">
+                <a href="index.html"><img class="img-menu-navbar-mobile" src="/assets/img/logo.png" alt=""></a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="service.html">Dịch vụ</a>
+                <a href="product.html">Sản phẩm</a>
+                <a href="news.html">Tin tức</a>
+                <a href="contact.html">Liên hệ</a>
+                <a href="cart.html">Giỏ hàng</a>
+                <a href="login.html">Đăng nhập</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunctionNavbarMobile()">☰</a>
+            </div>
+        </section>
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar">
+                        <div class="logo">
+                            <img class="img-fluid img-logo" src="/assets/img/logo.png" alt="">
+                        </div>
+                        <div class="menu-item">
+                            <div class="home-nav">
+                                <a class="live" href="index.html">Trang chủ</a>
+                            </div>
+                            <div class="about-nav">
+                                <a href="about.html">Giới thiệu</a>
+                            </div>
+                            <div class="service-nav dropdown">
+                                <a>Dịch vụ <i class="fa-solid fa-angle-down"></i></a>
+                                <div class="dropdown-content-1">
+                                    <div class="detail-dropdown-content-1">
+                                        <a class="dropdown-item" href="service.html">Sửa chữa khung gầm ô tô</a>
+                                        <a href="service.html">Đại tu động cơ</a>
+                                        <a href="service.html">Bảo dưỡng ô tô định kỳ</a>
+                                        <a href="service.html">Xử lý hệ thống điện</a>
+                                        <a href="service.html">Phử bóng Ceramic</a>
+                                        <a class="last-item" href="service.html">Vệ sinh khoang máy ô tô</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-nav dropdown">
+                                <a>Sản phẩm <i class="fa-solid fa-angle-down"></i></a>
+                                <div class="dropdown-content-2">
+                                    <div class="detail-dropdown-content-2">
+                                        <div class="combo-2-item">
+                                            <a href="product.html">Thảm lót ô tô</a>
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </div>
+                                        <div class="combo-2-item">
+                                            <a href="product.html">Phụ kiện khác</a>
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </div>
+                                        <div class="combo-2-item">
+                                            <a href="product.html">Đèn ô tô</a>
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </div>
+                                        <div class="combo-2-item">
+                                            <a href="product.html">Lốp ô tô</a>
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </div>
+                                        <div class="combo-2-item">
+                                            <a href="product.html">Dầu nhớt ô tô</a>
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </div>
+                                        <div class="combo-2-item">
+                                            <a class="last-item" href="product.html">Sản phẩm nổi bật</a>
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="news-nav">
+                                <a href="news.html">Tin tức</a>
+                            </div>
+                            <div class="contact-nav">
+                                <a href="contact.html">Liên hệ</a>
+                            </div>
+                        </div>
+                        <div class="icon-navbar">
+                            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a href="cart.html"><i class="fa-solid fa-cart-shopping">
+                                    <span>0</span>
+                                </i></a>
+                            <a href="login.html">
+                                <i id="iconUser" class="fa-solid fa-user"></i>
+                            </a>
+                        </div>
+                        <div class="button">
+                            <button>
+                                Đặt lịch <i class="fa-solid fa-arrow-right-long"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    {% block content %}        
+    {% endblock content %}
+
+    <footer id="footer" class="footer">
+        <div class="container" style="padding-top: 0;">
+            <div class="contact">
+                <div class="address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>
+                        Tòa nhà Ladeco, 266 Đội Cấn, Ba Đình, Hà Nội, Vietnam
+                    </p>
+                </div>
+                <div class="tel">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="phone">
+                        <a>19006750</a>
+                        <p>Hổ trợ 24/7</p>
+                    </div>
+                </div>
+                <div class="mail">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="item-mail">
+                        <a>support@gmail.vn</a>
+                        <a>AutoCenter@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row group-info">
+                <div class="col logo-footer">
+                    <div class="img-group-info">
+                        <img class="img-fluid" src="/assets/img/logo_footer.webp" alt="">
+                    </div>
+                    <div class="sologan-footer">
+                        <p>Auto Center - Hệ thống sửa chữa & chăm sóc xe đạt chuẩn, cung cấp dịch vụ sửa chữa ô tô, bảo
+                            dưỡng ô tô, chăm sóc ô tô: khung gầm, động cơ, hộp số, dọn nội thất, phủ ceramic</p>
+                    </div>
+                    <div class="group-icon">
+                        <div class="fb">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="ins">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </div>
+                        <div class="youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <div class="twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col about">
+                    <h4>Giới thiệu chung</h4>
+                    <a href="index.html">Trang chủ</a>
+                    <a href="about.html">Giới thiệu</a>
+                    <a href="product.html">Dịch vụ</a>
+                    <a href="product.html">Sản phẩm</a>
+                    <a href="news.html">Tin tức</a>
+                    <a href="contact">Liên hệ</a>
+                </div>
+                <div class="col policy">
+                    <h4>Chính sách</h4>
+                    <a href="index.html">Trang chủ</a>
+                    <a href="about.html">Giới thiệu</a>
+                    <a href="product.html">Dịch vụ</a>
+                    <a href="product.html">Sản phẩm</a>
+                    <a href="news.html">Tin tức</a>
+                    <a href="contact">Liên hệ</a>
+                </div>
+                <div class="col worktime">
+                    <h4>Thời gian làm việc</h4>
+                    <div class="row">
+                        <div class="col">
+                            <p>Thứ 2 đến thứ 6</p>
+                            <p>Thứ 7</p>
+                            <p>Chủ nhật</p>
+                        </div>
+                        <div class="col">
+                            <p>7h30 - 17h30</p>
+                            <p>8h00 - 17h30</p>
+                            <p>9h00 - 17h00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% block script %}     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/assets/index.js"></script>
+    {% endblock script %}
+</body>
+</html>

@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+{% block title %}
+AutoCenter Login Page
+{% endblock title %}
+{% block content %}
+<section class="img-background">
+    <h3>Tài khoản</h3>
+    <div class="local-title">
+        <a href="index.html" class="style-back-home">Trang chủ</a> / <a class="live">Tài khoản</a>
+    </div>
+</section>
+<section id="form-input" class="form-input">
+    <div class="container">
+        <div class="group-form-input">
+            <div class="list-button style-button">
+                <button class="tablinks" onclick="openDetails(event, 'login')" id="defaultOpen">đăng nhập</button>
+                <span>/</span>
+                <button id="btnsignin" class="tablinks" onclick="openDetails(event, 'signin')">đăng kí</button>
+            </div>
+            <div id="login" class="tabcontent">
+                <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                <form id="form-login" action="#" method="post">
+                    <div class="row box-input">
+                        <p>THÔNG TIN CÁ NHÂN</p>
+                        <div class="col form-left">
+                            <label for="">Email / Số điện thoại: *</label>
+                            <input id="username" type="text" name="username">
+                            <label for="">Mật khẩu: *</label>
+                            <input id="password" type="password" name="password">
+                            <span id="noti" style="font-size: 13px; margin-top:0.5rem;">
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                        {% for msg in messages %}
+                                            {{ msg }}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+                            </span>
+                            <a href="">Bạn quên mật khẩu?</a>
+                        </div>
+                        <div class="col form-right">
+                            <h5>BẠN CHƯA CÓ TÀI KHOẢN</h5>
+                            <p>Đăng ký tài khoản ngay để có thể mua hàng nhanh chóng và dễ dàng hơn ! Ngoài ra còn
+                                có rất nhiều chính sách và ưu đãi cho các thành viên Template Auto Center</p>
+                        </div>
+                        <div class="button-submit">
+                            <button class="button-login" type="submit"> Đăng nhập </button>
+                            
+                            <button type="button" onclick="(
+                                async function(){
+                                    const form = document.querySelector('#form-login');
+                                    let pTag = getElementById('noti');
+                                    if (form.username.value == '') {
+                                        pTag.innerHTML = 'Username Empty'
+                                        return
+                                    }
+                                    if (form.password.value == '') {
+                                        pTag.innerHTML = 'Password Empty'
+                                        return
+                                    }
+                                    pTag.innerHTML = ''
+                                    const response = await fetch(`127.0.0.1:5000/api/auth/log-in`, {
+                                        method: 'POST',
+                                        body: new FormData(form),
+                                    });
+                                    const json = await response.json();
+                                    if (json?.code == 200) {            
+                                        console.log(json)
+                                    }
+                                    window.alert(json.message)
+                                }
+                            )()">Sign-In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="signin" class="tabcontent">
+                <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                <form id="form-register" action="#" method="post">
+                    <div class="row box-input">
+                        <p>THÔNG TIN CÁ NHÂN</p>
+                        <div class="col form-left">
+                            <label for="">Họ:</label>
+                            <input type="text">
+                            <label for="">Tên: </label>
+                            <input type="text">
+                            <label for="">Số điện thoại: (*)</label>
+                            <input type="text">
+                        </div>
+                        <div class="col form-right">
+                            <label for="">Email: *</label>
+                            <input type="text" name="username">
+                            <label for="">Mật khẩu: *</label>
+                            <input type="password" name="password">
+                            <label for="">Nhập lại mật khẩu: *</label>
+                            <input type="password">
+                        </div>
+                        <div class="button-submit">
+                            <button type="button" onclick="(async function(){
+                                const form = document.querySelector('#form-register');
+                                if (form.username.value == '') {
+                                    alert('Email notbe empty!')
+                                    return
+                                }
+                                if (form.password.value == '') {
+                                    alert('Password notbe empty!')
+                                    return
+                                }
+                                if (form.username.value == form.password.value) {
+                                    alert('Email and Password notbe the same!')
+                                    return
+                                }
+                                const response = await fetch(`127.0.0.1:5000/api/auth/register`, {
+                                        method: 'POST',
+                                        body: new FormData(form),
+                                    });
+                                const json = await response.json();
+                                if (json?.code == 200) {            
+                                    console.log(json)
+                                    if (json?.token) {
+                                        // luu token vao local storage
+                                    }
+                                }
+                            })()" 
+                            > Đăng kí</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="signin-with">
+            <p>Hoặc đăng nhập bằng</p>
+            <div class="group-item-login-with">
+                <a href="" class="login-with-fb">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    Facebook
+                </a>
+                <a href="" class="login-with-gg">
+                    <i class="fa-brands fa-google"></i>
+                    Google
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+

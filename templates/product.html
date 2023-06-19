@@ -1,0 +1,340 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section class="img-background">
+        <h3>Sản phẩm</h3>
+        <div class="local-title">
+            <a href="index.html" class="style-back-home">Trang chủ</a> / <a class="live">Sản phẩm</a>
+        </div>
+    </section>
+    <section id="autocenter-product" class="product">
+        <div class="container">
+            <div class="index-product">
+                <div class="list-button style-button">
+                    <button class="tablinks" onclick="openDetails(event, 'Hot')" id="defaultOpen">Sản phẩm nổi
+                        bật</button>
+                    <button class="tablinks" onclick="openDetails(event, 'Oil')">Dầu nhớt ô tô</button>
+                    <button class="tablinks" onclick="openDetails(event, 'Tyre')">Lốp ô tô</button>
+                    <button class="tablinks" onclick="openDetails(event, 'HeadLight')">Đèn ô tô</button>
+                    <button class="tablinks" onclick="openDetails(event, 'Other')">Phụ kiện khác</button>
+                </div>
+                <div id="Hot" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row group-item-product">
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/gia-dau-nhot-xe-may.png" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Fuchs Silkolene 10w40 và 10w30 chính hãng</p>
+                                    <a>200.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">450.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/volkswagen-co-dau.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Động Cơ 10w40 Ô Tô TOTAL QUARTZ 5000 SN</p>
+                                    <a>250.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">550.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/dau-nhot-nhap.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Xe Ô Tô MOTUL Multipower Plus 5W30 4L (Giới hạn)</p>
+                                    <a>1.500.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Mua Ngay</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/lop-nhap.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Vỏ Lốp 165-65R14 Otani Thái Lan, Vỏ Lốp Chevrolet Spark</p>
+                                    <a>2.000.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;
+                                </div>
+                                <button class="button-bottom-item">Mua ngay</button>
+                            </div>
+                        </div>
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/dau-nhot-nhap.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Xe Ô Tô MOTUL Multipower Plus 5W30 4L (Giới hạn)</p>
+                                    <a>1.500.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Mua Ngay</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/lop-nhap.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Vỏ Lốp 165-65R14 Otani Thái Lan, Vỏ Lốp Chevrolet Spark</p>
+                                    <a>2.000.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;
+                                </div>
+                                <button class="button-bottom-item">Mua ngay</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/gia-dau-nhot-xe-may.png" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Fuchs Silkolene 10w40 và 10w30 chính hãng</p>
+                                    <a>200.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">450.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/volkswagen-co-dau.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Động Cơ 10w40 Ô Tô TOTAL QUARTZ 5000 SN</p>
+                                    <a>250.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">550.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="Oil" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row group-item-product">
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/gia-dau-nhot-xe-may.png" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Fuchs Silkolene 10w40 và 10w30 chính hãng</p>
+                                    <a>200.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">450.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/volkswagen-co-dau.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Động Cơ 10w40 Ô Tô TOTAL QUARTZ 5000 SN</p>
+                                    <a>250.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">550.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/gia-dau-nhot-xe-may-4.png" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Tổng Hợp 10w40 MOTUL TOTAL SCOOTER Jaso MB </p>
+                                    <a>300.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">650.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/dau-nhot-nhap-khau-song-dai-long-723924.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Dầu Nhớt Xe Ô Tô CASTROL EDGE 5W30 MULTIPOWER Plus SP 4L</p>
+                                    <a>1.500.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">2.500.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/volkswagen-co-dau.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Phụ Gia Dầu Nhớt Nano Graphene Oli Additive DD Phụ Gia</p>
+                                    <a>250.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">300.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Tyre" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row group-item-product">
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/bluearth-es.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Vỏ lốp 195/55R16 Maxxis, Vỏ lốp xe ô tô BMW 116i</p>
+                                    <a>1.400.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/175-50r15.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Vỏ lốp 165/65R14 Otani Thái Lan, vỏ lốp Chevrolet Spark Duo</p>
+                                    <a>2.500.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/bluearth-es32-a.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>LỐP XE ÔTÔ MILESTAR (full size) - LỐP THƯƠNG HIỆU MỸ, CHẤT LƯỢNG CAO</p>
+                                    <a>1.800.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/265-65r17.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Vỏ lốp 185/55R15 TBB, Vỏ lốp ô tô Chevrolet Aveo, Vỏ lốp xe Ford Fiesta</p>
+                                    <a>900.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/175-50r15.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Bộ 04 Ốp Chụp Mâm Lazang Xe Ô Tô Hyundai R14 14inch - TB</p>
+                                    <a>600.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="HeadLight" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row group-item-product">
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/den1.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Đèn Pha Led RUBY Bi Cầu Mini 2 Mầu Đuôi Công 2021 Chip Mini L2</p>
+                                    <a>1.600.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">2.000.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/den2.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Bóng đèn LED lùi xe siêu sáng T15 W16W 921 45 SMD 4014 cho ô tô</p>
+                                    <a>2.100.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">2.500.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/den3.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Cặp đèn LED pha xe hơi cao cấp H4 H7 H11 H8 Hb4 H1 H3 9005 Hb3 Auto S2 72w 8000lm
+                                    </p>
+                                    <a>700.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">850.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/den4.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>1 cặp đèn pha LED 12000LM H4 H7 H11 H27 9005 HB3 9006 HB4 H1 6000K 8000K 110W</p>
+                                    <a>3.000.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">3.500.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/den5.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Đèn pha LED Philips Ultinon Essential Gen 2</p>
+                                    <a>600.000<u>đ</u></a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Other" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row group-item-product">
+                        <div class="col list-item-product">
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/do-trang-tri-xe-hoi-1.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Bộ mô hình ô tô siêu xinh</p>
+                                    <a>800.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">1.000.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/phu-kien-trang-tri-oto-cap-huou-1.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Bộ tượng cao cấp hưu và nai</p>
+                                    <a>500.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">1.000.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/do-trang-tri.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Decor mèo thần tài, trang trí taplo ô tô
+                                    </p>
+                                    <a>500.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">650.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                            <div class="item-product">
+                                <div class="img-item-product">
+                                    <img src="/assets/img/do-trang-tri-2.jpg" alt="">
+                                </div>
+                                <div class="name-item-product">
+                                    <p>Bộ tượng hình chú tiểu & đài hoa</p>
+                                    <a>900.000<u>đ</u></a>&nbsp;&nbsp;&nbsp;<a class="line-center">1.050.000đ</a>
+                                </div>
+                                <button class="button-bottom-item">Tùy chọn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock content %}

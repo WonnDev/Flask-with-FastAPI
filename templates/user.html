@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% block title %}AutoCenter User Page{% endblock title %}    
+{% block content %}
+	<form id="getData" action="#" method="get" accept-charset="utf-8">
+		<div class="box-input" style="margin: 10rem 15px;">
+			<p>
+				{% with messages = get_flashed_messages() %}
+	                {% if messages %}
+	                    {% for msg in messages %}
+	                        {{ msg }}
+	                    {% endfor %}
+	                {% endif %}
+	            {% endwith %}
+	        </p>
+			<button type="button" onclick="(async function(){
+				if (typeof(Storage) !== 'undefined') {
+					console.log('Local Storage is ready for use!')
+				} else {
+					console.log('Local Storage undefined!')
+				}
+	            const form = document.querySelector('#getData');
+	            const response = await fetch('127.0.0.1:8000/get-item/1', {
+	                    method: 'GET',
+	                    headers: { 'Content-Type': 'application/json' },
+	                    mode: 'no-cors',
+	                });
+	            console.log(response)
+	            const json = await response.json();
+	            console.log(json)
+	            document.getElementById('showdata').innerHTML = JSON.stringify(json, undefined, 2);
+
+	            await localStorage.setItem('data', JSON.stringify(json, undefined, 4))
+	            const data1 = await localStorage.getItem('data');
+	            document.getElementById('listdata').innerHTML = localStorage.getItem('data');
+	            console.log(data1)
+	        })()">Get Data</button>
+			<button type="button" onclick="afterLogout()">Logout</button>
+
+			<pre id="showdata"></pre>
+			<pre id="listdata"><pre>
+
+		</div>	
+	</form>
+
+	<form id="form_login_post" action="#" method="post" style="margin:0 0 5rem 3rem;">
+        <div class="row box-input">
+            <p>THÔNG TIN CÁ NHÂN</p>
+            <div class="col form-left">
+                <label for="">Email / Số điện thoại: *</label>
+                <input id="username" type="text" name="username">
+                <label for="">Mật khẩu: *</label>
+                <input id="password" type="password" name="password">
+
+                <a href="">Bạn quên mật khẩu?</a>
+            </div>
+            <div class="col form-right">
+            	<span id="noti" style="margin-top:4rem;">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                {{ msg }}
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </span>
+            </div>
+            <div class="button-submit">
+                <button class="button-login" type="button" onclick="(async function(){
+                        const form = document.querySelector('#form_login_post');
+                        // if (form.username.value == '') {
+                        //     alert('Email notbe empty!')
+                        //     return
+                        // }
+                        // if (form.password.value == '') {
+                        //     alert('Password notbe empty!')
+                        //     return
+                        // }
+                        // if (typeof(Storage) !== 'undefined') {
+						// 	console.log('Local Storage is ready for use!')
+						// } else {
+						// 	console.log('Local Storage undefined!')
+						// }
+                        const response = await fetch(`localhost:8000/create-user/`, {
+                                method: 'post',
+                              	headers: { 'Content-Type': 'application/json' },
+                              	mode: 'no-cors',
+                                // body: new FormData(form),
+                                body : JSON.stringify({
+                                	username: form.username.value,
+									password: form.password.value
+	                            })
+                            });
+                        console.log(form.username.value)
+                        console.log(form.password.value)
+                        
+                        // localStorage.setItem('username-localStorage', form.username.value);
+                        // localStorage.setItem('password-localStorage', form.password.value);
+                        // console.log(localStorage.getItem('username-localStorage'))
+                        // console.log(localStorage.getItem('password-localStorage'))
+
+                        // const json = await response.json();
+                        // console.log(json)
+                        // if (json?.token) {
+                        //     // luu token vao local storage
+                        //     localStorage.setItem('api-token', json.token);
+                        // }
+                        // console.log(localStorage.getItem('api-token'))
+                    })()"
+
+                > Đăng nhập </button>
+			</div>
+		</div>
+	</form>
+
+	<style type="text/css">
+		.afterlogin {
+			color: red;
+		}
+	</style>
+{% endblock content %}
+{% block script %}
+	<script type="text/javascript">
+		function afterLogin() {
+			var addClass = document.getElementById("iconUser");
+			addClass.classList.add("afterlogin")
+		}
+		function afterLogout() {
+			window.location.href = 'http://127.0.0.1:5000/logout'
+			var removeClass = document.getElementById("iconUser");
+			removeClass.classList.remove("afterlogin");
+		}
+	</script>
+{% endblock script %}
+    
+    

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section class="img-background">
+        <h3>Dịch vụ</h3>
+        <div class="local-title">
+            <a href="index.html" class="style-back-home">Trang chủ</a> / <a class="live">Dịch vụ</a>
+        </div>
+    </section>
+    <section id="autocenter-service" class="autocenter-service">
+        <div class="container">
+            <div class="index-product">
+                <div class="list-button style-button">
+                    <p>Dịch vụ của chúng tôi</p>
+                    <button class="tablinks" onclick="openDetails(event, '1')" id="defaultOpen">Sửa chữa khung gầm ô
+                        tô</button>
+                    <button class="tablinks" onclick="openDetails(event, '2')">Đại tu động cơ</button>
+                    <button class="tablinks" onclick="openDetails(event, '3')">Bảo dưỡng ô tô định kỳ</button>
+                    <button class="tablinks" onclick="openDetails(event, '4')">Xử lý hệ thống điện</button>
+                    <button class="tablinks" onclick="openDetails(event, '5')">Phủ bóng Ceramic</button>
+                    <button class="tablinks endtablinks" onclick="openDetails(event, '6')">Vệ sinh khoang máy ô
+                        tô</button>
+                </div>
+                <div id="1" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row tab-1-service">
+                        <p>bla bla ...</p>
+                    </div>
+                </div>
+                <div id="2" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row tab-2-service">
+                        <p>bla bla ... x3</p>
+                    </div>
+                </div>
+                <div id="3" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row tab-3-service">
+                        <p>bla bla ... x6</p>
+                    </div>
+                </div>
+                <div id="4" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row tab-4-service">
+                        <p>bla bla ... x9</p>
+                    </div>
+                </div>
+                <div id="5" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row tab-5-service">
+                        <p>bla bla ... x99</p>
+                    </div>
+                </div>
+                <div id="6" class="tabcontent">
+                    <span class="button-close" onclick="this.parentElement.style.display='none'">&times</span>
+                    <div class="row tab-6-service">
+                        <p>bla bla ... x3000</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock content %}
